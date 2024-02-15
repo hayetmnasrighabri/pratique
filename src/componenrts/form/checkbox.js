@@ -8,7 +8,8 @@ export default function Checkbox({label, onChange, checked,id }){
           checked={checked}
           onChange={(e)=>onChange(e.target.checked)}
           />
-                <label className="form-check-label" htmlFor={id}>{label}</label> 
+        <label className="form-check-label" 
+        htmlFor={id}>{label}</label> 
         </div>
     )
 }
