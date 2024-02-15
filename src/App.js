@@ -1,17 +1,16 @@
-const { useState } = require("react");
-
-function useToggle(){
-const [state, setState]=useState(false)
-const toggle=()=>
-  setState(v=>!v)
-  return[state, toggle]
-}
- function App(){
+import { useState } from "react"
+import useToggle from "./hook/useToggle";
+import useIncrement from "./hook/increment";
+function App(){
   const [checked, setChecked]=useToggle()
+  const {count, increment, decrement}= useIncrement()
   return(
     <div>
     <input  type="checkbox" checked={checked} onChange={setChecked}/>
-    {checked && 'je suis cocher'}
+    {checked && 'je suis cocher'}<br/>
+      <button onClick={increment}>increment</button><br/>
+      <button    onClick={decrement}>decrement</button><br/>
+       count: {count}
     </div>
   )
  }
