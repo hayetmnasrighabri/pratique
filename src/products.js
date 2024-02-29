@@ -5,9 +5,12 @@ function Products(props) {
     <div>
       <div className='product-a'>
         <h1>title: {props.product.title}</h1>
-        <p>description: {props.product.description}</p>
-        <p>{props.product.price}</p>
         <img src={props.product.image}/>
+        <p>{props.product.price}</p>
+        <p>description: {props.product.description}</p>
+       
+        
+      <button onClick={()=>{console.log('you going to buy this product', props.product.price)}}>buy</button>
       </div>
     </div>
   )
